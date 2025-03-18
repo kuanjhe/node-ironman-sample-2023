@@ -1,0 +1,21 @@
+建立容器 .是表示當前目錄
+docker build -t ironman-app-2023 .
+運行 docker -p 表示 port 號，前面是地端要運行的 port，後面是 image 的 port，後面是 image 名稱
+此方式無法於當前 terminal 關閉
+docker run -p 3005:3000 ironman-app-2023
+此方式運行會在背景執行 當前 terminal 可以操作
+docker run -p 3005:3000 -d ironman-app-2023
+刪除 docker image
+docker rmi ironman-app-2023
+檢視所有運行中的容器(正確執行中的)
+docker ps 
+檢視所有運行中的容器(包含失敗)
+docker ps -a
+刪除容器 使用 container id
+docker rm 190e4639bef7
+更新 image 不一定要刪除後重建，可以被更新
+
+停止容器運行 使用 container id
+docker stop ec2fbd35cbc2
+重新啟用容器運行 使用 container id
+docker start ec2fbd35cbc2
